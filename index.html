@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html ng-app lang="en">
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
@@ -7,7 +7,25 @@
     <title>Vite App</title>
   </head>
   <body>
-    <div id="app"></div>
-    <script type="module" src="/main.js"></script>
+    <div id="app" class="container mx-auto px-4">
+      <main class="flex flex-col gap-8 h-screen justify-center items-center">
+        <div class="flex items-center gap-4">
+          <a href="https://angularjs.org" target="_blank">
+            <img src="/Angularjs.ico" alt="AngularJS logo" class="hover:scale-125 ease-in-out duration-300">
+          </a>
+          <div class="font-bold text-5xl">
+            +
+          </div>
+          <a href="https://vitejs.dev" target="_blank">
+            <img src="/vite.svg" alt="Vite logo" class="h-16 hover:scale-125 ease-in-out duration-300" />
+          </a>
+        </div>
+        <h1 class="text-3xl">Hello AngularJS + Vite!</h1>
+        <button class="btn btn--primary hover:scale-105 ease-in-out" ng-init="count = 0" ng-click="count = count + 1">
+          Count {{count}}
+        </button>
+      </main>
+    </div>
+    <script type="module" src="/src/app.js"></script>
   </body>
 </html>

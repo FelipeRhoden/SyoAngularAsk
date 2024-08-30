@@ -1,0 +1,11 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.btn {
+    @apply text-base font-medium rounded-lg p-3;
+}
+
+.btn--primary {
+    @apply bg-red-500 text-white hover:bg-red-600 duration-300;
+}
