@@ -35,7 +35,7 @@
 
         <div
           class="question"
-          ng-repeat="question in questions"
+          ng-repeat="question in questions track by question.id"
         >
           <p>{{question.content}}</p>
           <div class="footer">
@@ -45,8 +45,8 @@
             <div class="flex justify-center items-center gap-2">
 
               <button
-                ng-click="question.likeCount = !question.likeCount ? question.likeCount + 1 : question.likeCount - 1"
-                ng-class="['btn','btn--icon',{ liked: question.likeCount, unliked: !question.likeCount }]"
+                ng-click="question.likeCount = question.likeCount + (!question.likeId ? 1 : -1); question.likeId = !question.likeId"
+                ng-class="['btn','btn--icon',{ liked: question.likeId, unliked: !question.likeId }]"
               >
                 <span ng-if="question.likeCount">{{question.likeCount}}</span>
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">

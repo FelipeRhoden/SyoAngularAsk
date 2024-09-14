@@ -4,13 +4,13 @@ import angular from "angular";
 const room = angular.module("room", [])
 
 room.controller("questionController", ['$scope', function($scope) {
-
+    let countId = 0;
     $scope.author = "Rhoden";
 
     $scope.questions = [
-        { likeCount: 0, content: "Quando o AngularJS foi criado?", author: "Rhoden" },
-        { likeCount: 1, content: "O que é um controller?", author: "Pohren" },
-        { likeCount: 1, content: "Alguém ainda usa AngularJS?", author: "Silva" }
+        { id: countId++, likeCount: 0, content: "Quando o AngularJS foi criado?", author: "Rhoden" },
+        { id: countId++, likeCount: 1, content: "O que é um controller?", author: "Pohren" },
+        { id: countId++, likeCount: 1, content: "Alguém ainda usa AngularJS?", author: "Silva" }
     ]
 
     $scope.ask = () => {
@@ -18,7 +18,7 @@ room.controller("questionController", ['$scope', function($scope) {
             return;
         }
         $scope.questions.unshift(
-            { likeCount: 0, content: $scope.newQuestion, author: $scope.author },
+            { id: countId++, likeCount: 0, content: $scope.newQuestion, author: $scope.author },
         );
         $scope.newQuestion = "";
     }
